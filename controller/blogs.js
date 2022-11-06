@@ -13,8 +13,10 @@ const Home = catchAsync(async (req, res, next) => {
 
 // views a published blog for logged in and nonlogged in users
 const Homeview = catchAsync(async (req, res, next) => {
-  const blogs = await Blog.find({ state: "published" });
-  blogs.read_count += 1;
+  const { blogid } = req.params;
+  const blogs = await Blog.findOne({_id: blogid , state: "published" });
+  console.log(blogs)
+  blogs.read_count += 1
   await blogs.save();
   res.status(200).json(blogs);
 });

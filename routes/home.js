@@ -9,7 +9,7 @@ const router = express.Router()
 router.route('/')
     .get(Home)
 
-router.route('/view')
+router.route('/:blogid')
     .get(Homeview)
 
 

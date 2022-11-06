@@ -15,8 +15,7 @@ router.route("/")
     .get(getAllBlogsByAUser)
     .post(postNewBlog);
 
-router
-  .route("/:blogid")
+router.route("/:blogid")
   .get(getToView)
   .put(editABlog)
   .delete(deleteABlog)
