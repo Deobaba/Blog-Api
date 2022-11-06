@@ -1,12 +1,12 @@
 const express = require("express");
-const User = require("./models/user");
-const Blog = require("./models/blog");
+const User = require("./src/models/user");
+const Blog = require("./src/models/blog");
 const cookieParser = require('cookie-parser')
 const ExpressError = require("./utils/expressError");
 const catchAsync = require("./utils/catchAsync");
-const blogRoutes = require('./routes/blogs')
-const homeRoutes = require('./routes/home')
-const authRouter = require('./routes/auth');
+const blogRoutes = require('./src/routes/blogs')
+const homeRoutes = require('./src/routes/home')
+const authRouter = require('./src/routes/auth');
 const passport = require("passport");
 const addUserToRequestBody = require('./utils/confirmUser');
 
@@ -40,7 +40,6 @@ app.use((err, req, res, next) => {
 });
 
 app.use((err, req, res, next) => {
-  console.log(err)
   const { status = 500, message = "something went wrong" } = err;
   res.status(status).send(message);
 });

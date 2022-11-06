@@ -3,15 +3,9 @@ const app = require('../app');
 
 
 describe('Home Route', () => {
-    it('Should return status true', async () => {
-        const response = await request(app).get('/').set('content-type', 'application/json')
+    it('my home blog?get', async () => {
+        const response = await request(app).get('/home').set('content-type', 'application/json')
         expect(response.status).toBe(200)
-        expect(response.text).toEqual('Welcome to my blog')
     })
 
-    it('Should return error when routed to undefined route', async () => {
-        const response = await request(app).get('/undefined').set('content-type', 'application/json')
-        expect(response.status).toBe(404)
-        expect(response.body).toEqual({ message: 'route not found' })
-    })
 });

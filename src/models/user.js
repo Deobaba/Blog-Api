@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const {isEmail} = require('validator')
 const Blog = require('./blog')
 const bcrypt = require('bcrypt')
-const ExpressError = require('../utils/expressError')
+const ExpressError = require('../src/utils/expressError')
 
 const userSchema = new mongoose.Schema({
     firstname: String,

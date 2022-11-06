@@ -1,8 +1,8 @@
 const path = require("path");
 const User = require("../models/user");
 const Blog = require("../models/blog");
-const ExpressError = require("../utils/expressError");
-const catchAsync = require("../utils/catchAsync");
+const ExpressError = require("../../utils/expressError");
+const catchAsync = require("../../utils/catchAsync");
 
 // show all published blog by all users
 const Home = catchAsync(async (req, res, next) => {
